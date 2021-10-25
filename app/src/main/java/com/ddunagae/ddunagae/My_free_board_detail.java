@@ -46,8 +46,6 @@ public class My_free_board_detail extends AppCompatActivity {
         title = (TextView)findViewById(R.id.my_free_board_detail_title) ;
         content = (TextView)findViewById(R.id.my_free_board_detail_content);
         nickname = (TextView)findViewById(R.id.my_writer_nickname);
-        comment = (EditText)findViewById(R.id.my_free_board_detail_comment);
-        send = (Button)findViewById(R.id.my_free_board_detail_post_comment);
         photo = (ImageView)findViewById(R.id.my_free_board_detail_profile_image);
         profile = (ImageView)findViewById(R.id.my_profile_image);
 

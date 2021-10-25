@@ -15,12 +15,17 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -31,6 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private Session session;
+
 
     FirebaseUser user;
 
@@ -124,12 +130,12 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-        if(user == null){ session.setFirstTimeLaunch(false);
+        if(user == null){
+            session.setFirstTimeLaunch(false);
             startActivity(new Intent(WelcomeActivity.this, Login_New_Page.class));
             finish();
         }else{
-            Intent intent = new Intent(getApplicationContext(),Mainactivity.class);
-            startActivity(intent);
+            overlap_uid();
         }
 
     }
@@ -210,5 +216,29 @@ public class WelcomeActivity extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+    }
+    public void overlap_uid(){
+        final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference().child("users").child(uid).child("uid").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    //uid있을시
+                    Intent mainactivity = new Intent(getApplicationContext(), Mainactivity.class);
+                    startActivity(mainactivity);
+                }
+                else{
+                    //uid없을시
+                    Intent intent_information = new Intent(getApplicationContext(), My_Information.class);
+                    startActivity(intent_information);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // 디비를 가져오던중 에러 발생 시
+                //Log.e("MainActivity", String.valueOf(databaseError.toException())); // 에러문 출력
+            }
+        });
     }
 }

@@ -90,7 +90,8 @@
         <activity android:name="com.ddunagae.ddunagae.Service_Center_Detail"/>
         <activity android:name="com.ddunagae.ddunagae.My_Service_Center_List"/>
         <activity android:name="com.ddunagae.ddunagae.My_Service_Center_Detail"/>
-        <activity android:name="com.ddunagae.ddunagae.My_Service_Center_detail_Change"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Service_Center_detail_Change"/>\
+        <activity android:name=".Terms_of_service"/>
 
     </application>
 

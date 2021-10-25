@@ -157,11 +157,11 @@ public class Matching_Option extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
-                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector);
+                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector,null);
 
                         } else {
                             room_database(text_h_matching_sex, text_h_matching_age, text_h_matching_pet_age, text_h_matching_pet_option, text_matching_room_option, text_h_car_option, chatting_room_option_selector);
-                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector);
+                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector,null);
 
                         }
                     }
@@ -207,12 +207,12 @@ public class Matching_Option extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
-                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector);
+                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector, text_group_member_number);
                             add_group_database(chatting_room_option_selector, text_room_name, chatModel);
 
                         } else {
-                            group_room_database(text_h_matching_sex, text_h_matching_age, text_h_matching_pet_age, text_h_matching_pet_option, text_matching_room_option, text_h_car_option, chatting_room_option_selector, text_group_member_number);
-                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector);
+                            group_room_database(text_h_matching_sex, text_h_matching_age, text_h_matching_pet_age, text_h_matching_pet_option, text_matching_room_option, text_h_car_option, chatting_room_option_selector);
+                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector, text_group_member_number);
                             add_group_database(chatting_room_option_selector, text_room_name, chatModel);
                         }
                     }
@@ -242,11 +242,12 @@ public class Matching_Option extends AppCompatActivity {
     }
 
 
-    public void room_name_detail_database(String roomname, String masteruid, String chatting_room_option_selector) {
+    public void room_name_detail_database(String roomname, String masteruid, String chatting_room_option_selector, String text_group_member_number) {
         Room_Name_Detail_Database room_name_detail_database = new Room_Name_Detail_Database();
         room_name_detail_database.Room_name = roomname;
         room_name_detail_database.master_uid = masteruid;
         room_name_detail_database.chatting_room_option_selector = chatting_room_option_selector;
+        room_name_detail_database.group_member_number =  text_group_member_number;
         mDatabase.child("chatting_room").child(chatting_room_option_selector).child("Room_Name").child(roomname).setValue(room_name_detail_database);
 
     }
@@ -287,7 +288,7 @@ public class Matching_Option extends AppCompatActivity {
                 });
     }
 
-    public void group_room_database(String matching_sex, String matching_age, String matching_pet_age, String matching_pet_option, String matching_room_option, String matching_car_option, String chatting_room_option_selector, String text_group_member_number) {
+    public void group_room_database(String matching_sex, String matching_age, String matching_pet_age, String matching_pet_option, String matching_room_option, String matching_car_option, String chatting_room_option_selector) {
         Group_Room_Database group_room_database = new Group_Room_Database();
         group_room_database.chatting_room_option_selector = chatting_room_option_selector;
         group_room_database.matching_age = matching_age;
@@ -296,7 +297,6 @@ public class Matching_Option extends AppCompatActivity {
         group_room_database.matching_room_option = matching_room_option;
         group_room_database.matching_sex = matching_sex;
         group_room_database.matching_car_option = matching_car_option;
-        group_room_database.group_member_number = text_group_member_number;
         mDatabase.child("chatting_room").child(chatting_room_option_selector).setValue(group_room_database)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

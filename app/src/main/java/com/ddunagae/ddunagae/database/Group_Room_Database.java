@@ -10,7 +10,7 @@ public class Group_Room_Database {
     public String matching_room_option;
     public String matching_car_option;
     public String chatting_room_option_selector;
-    public String group_member_number;
+
 
     public Group_Room_Database() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -25,7 +25,6 @@ public class Group_Room_Database {
         this.matching_pet_option = matching_pet_option;
         this.matching_room_option = matching_room_option;
         this.matching_car_option = matching_car_option;
-        this.group_member_number = group_member_number;
     }
 
 }
