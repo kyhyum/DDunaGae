@@ -45,6 +45,7 @@
     </string-array>
 
     <string-array name="group_member_number">
+        <item>2명</item>
         <item>3명</item>
         <item>4명</item>
         <item>5명</item>

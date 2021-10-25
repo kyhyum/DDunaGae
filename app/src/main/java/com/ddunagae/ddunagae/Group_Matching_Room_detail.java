@@ -101,6 +101,7 @@ public class Group_Matching_Room_detail extends AppCompatActivity {
         go_chattingroom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (user == null) {
                     Toast.makeText(Group_Matching_Room_detail.this, "로그인한 회원만 이용할 수 있습니다!", Toast.LENGTH_SHORT).show();
                 }else{
@@ -108,42 +109,74 @@ public class Group_Matching_Room_detail extends AppCompatActivity {
                     intent.putExtra("chat_masterUid", master_uid);
                     intent.putExtra("room_name", room_name);
                     intent.putExtra("option_selector", chatting_room_option_selector);
-                    ActivityOptions activityOptions = null;
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                        activityOptions = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.fromright, R.anim.toleft);
-                        startActivity(intent, activityOptions.toBundle());
-                        mDatabase.child("users").child(master_uid).child("my_chatting_list").child("그룹 채팅방").child(room_name).child("chatroomuid").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                    FirebaseDatabase.getInstance().getReference().child("chatting_room").child(chatting_room_option_selector).child("Room_Name").child(room_name).child("group_member_number").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String groupnum = snapshot.getValue().toString();
+                            String num = groupnum.substring(0,1);
+                            int num1 = Integer.valueOf(num).intValue();
+                            FirebaseDatabase.getInstance().getReference().child("chatting_room").child(chatting_room_option_selector).child("Room_Name").child(room_name).child("talk").orderByChild("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    int i=1;
+                                    for (DataSnapshot item : snapshot.getChildren()){
+                                        i = +1;
+                                    }
+                                    if(i<=num1){
+                                        ActivityOptions activityOptions = null;
+                                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                                            activityOptions = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.fromright, R.anim.toleft);
+                                            startActivity(intent, activityOptions.toBundle());
+                                            mDatabase.child("users").child(master_uid).child("my_chatting_list").child("그룹 채팅방").child(room_name).child("chatroomuid").addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
 
-                                String abc = snapshot.getValue(String.class);
+                                                    String abc = snapshot.getValue(String.class);
 
 
-                                ChatModel chatModel = new ChatModel();
-                                chatModel.users.put(uid, true);
+                                                    ChatModel chatModel = new ChatModel();
+                                                    chatModel.users.put(uid, true);
 
 
-                                Map<String, Object> user = new HashMap<>();
-                                user.put(uid, true);
+                                                    Map<String, Object> user = new HashMap<>();
+                                                    user.put(uid, true);
 
 
-                                mDatabase.child("chatting_room")
-                                        .child(chatting_room_option_selector)
-                                        .child("Room_Name").child(room_name).child("talk")
-                                        .child(abc).child("users")
-                                        .updateChildren(user, chatModel);
+                                                    mDatabase.child("chatting_room")
+                                                            .child(chatting_room_option_selector)
+                                                            .child("Room_Name").child(room_name).child("talk")
+                                                            .child(abc).child("users")
+                                                            .updateChildren(user, chatModel);
 
-                                group_room_name_database(room_name, chatting_room_option_selector);
+                                                    group_room_name_database(room_name, chatting_room_option_selector);
 
-                            }
+                                                }
 
-                            @Override
-                            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                                                @Override
+                                                public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
-                            }
-                        });
-                    }
-                    startActivity(intent);
+                                                }
+                                            });
+                                        }
+                                        startActivity(intent);
+                                    }else{
+                                        Toast.makeText(Group_Matching_Room_detail.this, "인원이 꽉 찼습니다!", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                 }
             }
         });
