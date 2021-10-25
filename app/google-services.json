@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "574818359913",
+    "project_id": "ddunagae-real-final",
+    "storage_bucket": "ddunagae-real-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574818359913:android:4e3a6625eed53c2ee4a0f8",
+        "android_client_info": {
+          "package_name": "com.ddunagae.ddunagae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574818359913-22n9q0jj1jrap3b6m8pjbi1p1h0192js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddunagae.ddunagae",
+            "certificate_hash": "66fced6f83f915d96eb523fe4005c58661cb2db6"
+          }
+        },
+        {
+          "client_id": "574818359913-uam8vo5j1r2sf50krbt0ivf1kelnhkdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8to3yHES1Uj-EY9NvQv28LGzWReLzzZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574818359913-uam8vo5j1r2sf50krbt0ivf1kelnhkdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
