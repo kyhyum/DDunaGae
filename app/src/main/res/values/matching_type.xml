@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="h_matching_sex">
+        <item>성별 선택</item>
+        <item>남</item>
+        <item>녀</item>
+    </string-array>
+    <string-array name="h_matching_age">
+        <item>나이</item>
+        <item>20대</item>
+        <item>30대</item>
+        <item>40대</item>
+        <item>50대</item>
+
+    </string-array>
+    <string-array name="h_matching_pet_age">
+        <item>반려동물 나이</item>
+        <item>1~6</item>
+        <item>7~11</item>
+        <item>12~17</item>
+    </string-array>
+
+    <string-array name="matching_room_option">
+        <item>매칭방 종류</item>
+        <item>1대1 매칭방</item>
+        <item>그룹 매칭방</item>
+    </string-array>
+
+    <string-array name="h_matching_pet_option">
+        <item>펫 크기</item>
+        <item>소형</item>
+        <item>중형</item>
+        <item>대형</item>
+    </string-array>
+
+    <string-array name="h_car_option">
+        <item>예</item>
+        <item>아니오</item>
+    </string-array>
+
+    <string-array name="live_area_1">
+        <item>예</item>
+        <item>아니오</item>
+    </string-array>
+
+    <string-array name="group_member_number">
+        <item>3명</item>
+        <item>4명</item>
+        <item>5명</item>
+        <item>6명</item>
+        <item>7명</item>
+        <item>8명</item>
+    </string-array>
+
+</resources>

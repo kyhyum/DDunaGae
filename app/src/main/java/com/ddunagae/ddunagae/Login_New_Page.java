@@ -98,8 +98,7 @@ public class Login_New_Page extends AppCompatActivity  implements GoogleApiClien
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                            startActivity(intent);
+                            overlap_uid();
                             finish();
                         }else {
 
@@ -114,6 +113,29 @@ public class Login_New_Page extends AppCompatActivity  implements GoogleApiClien
 
     }
 
+    public void overlap_uid(){
+        final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference().child("users").child(uid).child("uid").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    //uid있을시
+                    Intent mainactivity = new Intent(getApplicationContext(), Mainactivity.class);
+                    startActivity(mainactivity);
+                }
+                else{
+                    //uid없을시
+                    Intent intent_information = new Intent(getApplicationContext(), My_Information.class);
+                    startActivity(intent_information);
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // 디비를 가져오던중 에러 발생 시
+                //Log.e("MainActivity", String.valueOf(databaseError.toException())); // 에러문 출력
+            }
+        });
+    }
 
 }

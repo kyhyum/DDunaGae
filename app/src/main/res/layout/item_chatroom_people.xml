@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="170dp"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+        <!--프로필 사진-->
+        <ImageView
+            android:id="@+id/memeber_profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"/>
+
+            <!--방이름-->
+            <TextView
+                android:id="@+id/memeber_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사람 이름"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_gravity="center" />
+
+</LinearLayout>

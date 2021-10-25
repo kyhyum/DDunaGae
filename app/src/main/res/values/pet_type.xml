@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pet_type">
+        <item>대형견</item>
+        <item>중형견</item>
+        <item>소형견</item>
+
+    </string-array>
+
+    <string-array name="pet_sex">
+        <item>남</item>
+        <item>여</item>
+    </string-array>
+
+    <string-array name="car">
+        <item>예</item>
+        <item>아니오</item>
+    </string-array>
+
+
+
+</resources>

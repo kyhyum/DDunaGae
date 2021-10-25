@@ -2,23 +2,80 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ddunagae.ddunagae">
 
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION " />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="BIND_GET_INSTALL_REFERRER_SERVICE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_main"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_main_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DDunaGae">
+        android:theme="@style/Theme.Login_Example"
+        android:usesCleartextTraffic="true">
+
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="b214210d275c3c68a2ab5a59099d8b41" />
+
         <activity
-            android:name=".Login_New_Page"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Personal_information"/>
+        <activity android:name=".Mainactivity">
+            <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:host="ddunagae.page.link"
+                android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Category_Accommodation"/>
+        <activity android:name=".Search_Selected"/>
+        <activity android:name=".Login_New_Page"/>
+        <activity android:name=".My_Information"/>
+        <activity android:name=".My_Page"/>
+        <activity android:name=".Matching_Option"/>
+        <activity android:name=".Setting"/>
+        <activity android:name=".chat.New_MessageActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".New_ChatMainActivity"/>
+        <activity android:name=".My_Matching_Room_detail"/>
+        <activity android:name=".Single_Matching_Room_detail"/>
+        <activity android:name=".Matching_filter_Option"/>
+        <activity android:name=".Chatting_List"/>
+        <activity android:name=".chat.Group_MessageActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Free_Board_Writing"/>
+        <activity android:name=".Freeboard_Activity"/>
+        <activity android:name=".My_free_board_detail"/>
+        <activity android:name=".My_Free_Board_List"/>
+        <activity android:name=".Free_Board_Detail"/>
+        <activity android:name=".My_Free_Board_detail_Change"/>
+        <activity android:name=".Free_Board_Review"/>
+        <activity android:name=".WelcomeActivity"
+        android:screenOrientation="portrait"/>
+        <activity android:name="Notice"/>
+        <activity android:name=".Profile_Detail"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".Group_Matching_Room_detail"/>
+        <activity android:name=".My_Page_Information"/>
+        <activity android:name=".Service_Center"/>
+        <activity android:name=".Service_Center_Writing"/>
+        <activity android:name=".Service_Center_Detail"/>
+        <activity android:name=".My_Service_Center_Detail"/>
+        <activity android:name=".My_Service_Center_detail_Change"/>
+        <activity android:name=".My_Service_Center_List"/>
     </application>
 
 </manifest>

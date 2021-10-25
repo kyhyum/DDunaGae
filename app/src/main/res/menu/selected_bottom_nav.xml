@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/icons8_navigation_48"
+        android:iconTint="@color/black"
+        android:title="네비" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/icons8_home_50"
+        android:iconTint="@color/black"
+        android:title="홈" />
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/icons8_share_48"
+        android:iconTint="@color/black"
+        android:title="공유하기" />
+</menu>

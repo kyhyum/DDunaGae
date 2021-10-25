@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/drawable-v24/btn_bg_yellow.xml" value="0.11944444444444445" />
         <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/drawable-v24/clicked_textcolor.xml" value="0.11944444444444445" />
+        <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/font/test_font.xml" value="0.1" />
         <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/layout/drawer.xml" value="0.1" />
         <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/layout/login_new_page.xml" value="0.1" />
+        <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/menu/selected_bottom_nav.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/dudrh/Desktop/DDunaGae/app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>

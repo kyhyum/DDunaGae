@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingConstraints"
+    android:background="@color/white">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/free_board_activity_drawlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/free_board_activity_box1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--             상단바                -->
+
+            <ImageView
+                android:id="@+id/freeboard_home_img_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/go_back" />
+
+            <TextView
+                android:id="@+id/free_board_text"
+                app:layout_constraintStart_toEndOf="@+id/freeboard_home_img_back"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자유게시판"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+            <View
+                android:id="@+id/free_board_activity_view1"
+                app:layout_constraintTop_toBottomOf="@+id/free_board_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                />
+
+            <!--            자유게시판 카테고리      -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/free_board_activity_box2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/free_board_activity_view1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_edittext" >
+
+                <TextView
+                    android:id="@+id/free_board1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintVertical_bias="0.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자유게시판"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:background="@color/white"/>
+
+                <View
+                    android:id="@+id/free_board_activity_view2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintVertical_bias="0.2"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/free_board2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintVertical_bias="0.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="리      뷰"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:id="@+id/free_board3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.15"
+                    app:layout_constraintVertical_bias="0.8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="꿀   정   보"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:background="@color/white"/>
+
+                <View
+                    android:id="@+id/free_board_activity_view3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintVertical_bias="0.8"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/free_board4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.85"
+                    app:layout_constraintVertical_bias="0.8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동호회 모집"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:background="@color/white"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/free_board_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/free_board_bottomNavi"
+                app:layout_constraintTop_toBottomOf="@+id/free_board_activity_box2"
+                tools:layout_editor_absoluteX="4dp" />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/free_board_bottomNavi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/main_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/freeboard_bottom_nav" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
