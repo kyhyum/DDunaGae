@@ -15,7 +15,7 @@
       "oauth_client": [
         {
           "client_id": "574818359913-22n9q0jj1jrap3b6m8pjbi1p1h0192js.apps.googleusercontent.com",
-          "client_type": 1,
+          "client_type": 3,
           "android_info": {
             "package_name": "com.ddunagae.ddunagae",
             "certificate_hash": "66fced6f83f915d96eb523fe4005c58661cb2db6"

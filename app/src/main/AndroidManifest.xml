@@ -2,23 +2,96 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ddunagae.ddunagae">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="BIND_GET_INSTALL_REFERRER_SERVICE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DDunaGae">
-        <activity
-            android:name=".Login_New_Page"
-            android:exported="true">
+        android:theme="@style/Theme.ddunagae"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="b214210d275c3c68a2ab5a59099d8b41" />
+
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".MainActivity"/>
+
+
+
+        <activity android:name="com.ddunagae.ddunagae.Personal_information" />
+        <activity android:name="com.ddunagae.ddunagae.Mainactivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="ddunagae.page.link"
+                    android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ddunagae.ddunagae.Category_Accommodation" />
+        <activity android:name="com.ddunagae.ddunagae.Search_Selected" />
+<!--        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+
+<!--                &lt;!&ndash; Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" &ndash;&gt;-->
+<!--                <data-->
+<!--                    android:host="oauth"-->
+<!--                    android:scheme="kakaob214210d275c3c68a2ab5a59099d8b41" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <!--        <activity android:name=".Mainactivity" />-->
+        <activity android:name="com.ddunagae.ddunagae.Login_New_Page" />
+        <activity android:name="com.ddunagae.ddunagae.My_Information" />
+        <activity android:name="com.ddunagae.ddunagae.My_Page" />
+        <activity android:name="com.ddunagae.ddunagae.Matching_Option" />
+        <activity android:name="com.ddunagae.ddunagae.Setting" />
+        <activity android:name="com.ddunagae.ddunagae.chat.New_MessageActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.ddunagae.ddunagae.New_ChatMainActivity"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Matching_Room_detail"/>
+        <activity android:name="com.ddunagae.ddunagae.Single_Matching_Room_detail"/>
+        <activity android:name="com.ddunagae.ddunagae.Matching_filter_Option"/>
+        <activity android:name="com.ddunagae.ddunagae.Chatting_List"/>
+        <activity android:name="com.ddunagae.ddunagae.chat.Group_MessageActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.ddunagae.ddunagae.Free_Board_Writing"/>
+        <activity android:name="com.ddunagae.ddunagae.Freeboard_Activity"/>
+        <activity android:name="com.ddunagae.ddunagae.My_free_board_detail"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Free_Board_List"/>
+        <activity android:name="com.ddunagae.ddunagae.Free_Board_Detail"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Free_Board_detail_Change"/>
+        <activity android:name="com.ddunagae.ddunagae.Free_Board_Review"/>
+        <activity android:name="com.ddunagae.ddunagae.WelcomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.ddunagae.ddunagae.Notice"/>
+
+        <activity android:name="com.ddunagae.ddunagae.Profile_Detail" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.ddunagae.ddunagae.Group_Matching_Room_detail"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Page_Information"/>
+        <activity android:name="com.ddunagae.ddunagae.Service_Center"/>
+        <activity android:name="com.ddunagae.ddunagae.Service_Center_Writing"/>
+        <activity android:name="com.ddunagae.ddunagae.Service_Center_Detail"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Service_Center_List"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Service_Center_Detail"/>
+        <activity android:name="com.ddunagae.ddunagae.My_Service_Center_detail_Change"/>
+
     </application>
 
 </manifest>

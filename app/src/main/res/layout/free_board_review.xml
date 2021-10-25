@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리뷰"
+        android:textSize="40sp"
+        android:background="@color/white"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="숙소"
+                android:id="@+id/review_hotel"
+                android:background="@color/skyblue"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="병원"
+                android:id="@+id/review_hspt"
+                android:background="@color/skyblue"
+                android:layout_marginVertical="5dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여행지"
+                android:id="@+id/review_travel"
+                android:background="@color/skyblue"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미용실"
+                android:id="@+id/review_haircut"
+                android:background="@color/skyblue"
+                android:layout_marginVertical="5dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공원"
+                android:id="@+id/review_park"
+                android:background="@color/skyblue"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기타"
+                android:id="@+id/review_etc"
+                android:background="@color/skyblue"
+                android:layout_marginVertical="5dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/review_list"
+                android:layout_width="match_parent"
+                android:layout_height="569dp"
+                android:background="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
