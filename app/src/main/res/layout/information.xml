@@ -74,7 +74,7 @@
             android:layout_weight="1"
             android:ems="15"
             android:hint="전화번호"
-            android:inputType="number"
+            android:inputType="phone"
             android:textColor="@color/black" />
 
         <EditText
