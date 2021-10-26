@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "574818359913-bco1chc8c17h7qvojv53qeirqkogclbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddunagae.ddunagae",
+            "certificate_hash": "4c131d25df6f77bfb47dc74bbd9dddef23f62e13"
+          }
+        },
+        {
           "client_id": "574818359913-jmbfets91bt9cg6cv7h9qhodnvlml19p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

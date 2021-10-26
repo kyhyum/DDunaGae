@@ -14,6 +14,7 @@
     <string name="skip">다시 보지 않기</string>
     <string name="start">확인</string>
 
+    <string name="clientid">574818359913-uam8vo5j1r2sf50krbt0ivf1kelnhkdg.apps.googleusercontent.com</string>
 
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>

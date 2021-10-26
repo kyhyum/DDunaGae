@@ -43,7 +43,7 @@ public class Login_New_Page extends AppCompatActivity  implements GoogleApiClien
 
 // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("574818359913-uam8vo5j1r2sf50krbt0ivf1kelnhkdg.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.clientid))
                 .requestEmail()
                 .build();
 
