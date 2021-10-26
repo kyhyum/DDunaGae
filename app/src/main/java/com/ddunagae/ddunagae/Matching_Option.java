@@ -141,6 +141,8 @@ public class Matching_Option extends AppCompatActivity {
         personal_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 String text_h_matching_sex = h_matching_sex_spinner.getSelectedItem().toString();
                 String text_h_car_option = h_car_option_spinner.getSelectedItem().toString();
@@ -152,35 +154,41 @@ public class Matching_Option extends AppCompatActivity {
                 String chatting_room_option_selector = text_h_matching_sex + text_h_matching_age + text_h_matching_pet_age + text_h_matching_pet_option + text_matching_room_option + text_h_car_option;
                 String text_room_name = Room_Name.getText().toString();
 
+               if (text_room_name.length() == 0){
+                   Toast.makeText(Matching_Option.this , "조건을 모두 채워주세요!", Toast.LENGTH_SHORT).show();
+               }
+               else {
+                   mDatabase.child("chatting_room").child(chatting_room_option_selector).child("chatting_room_option_selector").addListenerForSingleValueEvent(new ValueEventListener() {
+                       @Override
+                       public void onDataChange(@NonNull DataSnapshot snapshot) {
+                           if (snapshot.exists()) {
+                               room_name_detail_database(text_room_name, uid, chatting_room_option_selector, null);
 
-                mDatabase.child("chatting_room").child(chatting_room_option_selector).child("chatting_room_option_selector").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector,null);
+                           } else {
+                               room_database(text_h_matching_sex, text_h_matching_age, text_h_matching_pet_age, text_h_matching_pet_option, text_matching_room_option, text_h_car_option, chatting_room_option_selector);
+                               room_name_detail_database(text_room_name, uid, chatting_room_option_selector, null);
 
-                        } else {
-                            room_database(text_h_matching_sex, text_h_matching_age, text_h_matching_pet_age, text_h_matching_pet_option, text_matching_room_option, text_h_car_option, chatting_room_option_selector);
-                            room_name_detail_database(text_room_name, uid, chatting_room_option_selector,null);
+                           }
+                       }
 
-                        }
-                    }
+                       @Override
+                       public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                       }
+                   });
 
-                    }
-                });
-                Intent intent_option = new Intent(getApplicationContext(), My_Matching_Room_detail.class);
-                intent_option.putExtra("text_h_matching_sex", text_h_matching_sex);
-                intent_option.putExtra("text_h_matching_age", text_h_matching_age);
-                intent_option.putExtra("text_h_matching_pet_age", text_h_matching_pet_age);
-                intent_option.putExtra("text_h_matching_pet_option", text_h_matching_pet_option);
-                intent_option.putExtra("text_h_car_option", text_h_car_option);
-                intent_option.putExtra("text_matching_room_option", text_matching_room_option);
 
-                intent_option.putExtra("Room_Name", Room_Name.getText().toString());
-                startActivity(intent_option);
+                   Intent intent_option = new Intent(getApplicationContext(), My_Matching_Room_detail.class);
+                   intent_option.putExtra("text_h_matching_sex", text_h_matching_sex);
+                   intent_option.putExtra("text_h_matching_age", text_h_matching_age);
+                   intent_option.putExtra("text_h_matching_pet_age", text_h_matching_pet_age);
+                   intent_option.putExtra("text_h_matching_pet_option", text_h_matching_pet_option);
+                   intent_option.putExtra("text_h_car_option", text_h_car_option);
+                   intent_option.putExtra("text_matching_room_option", text_matching_room_option);
+
+                   intent_option.putExtra("Room_Name", Room_Name.getText().toString());
+                   startActivity(intent_option);
+               }
             }
         });
         //그룹 채팅 클릭

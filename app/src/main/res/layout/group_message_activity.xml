@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="@color/white"
             >
 
 
@@ -90,21 +91,21 @@
                 android:background="@color/white" />
 
 
-
             <EditText
                 android:id="@+id/group_messageActivity_editText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_alignParentLeft="true"
-                android:textColor="@color/black"
                 android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@+id/group_messageActivity_button"/>
+                android:layout_toLeftOf="@+id/group_messageActivity_button"
+                android:background="@color/skyblue"
+                android:textColor="@color/black" />
 
 
             <Button
                 android:id="@+id/group_messageActivity_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:background="@color/skyblue"

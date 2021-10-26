@@ -73,7 +73,8 @@
                 android:layout_height="wrap_content"
                 android:ems="6"
                 android:textColor="@color/black"
-                android:hint="채팅방 이름 입력" />
+                android:hint="채팅방 이름 입력"
+                android:backgroundTint = "@color/black"/>
 
 
             <!--            매칭창 옵션      -->
@@ -116,8 +117,10 @@
                 app:layout_constraintStart_toEndOf="@id/matching_option_content1"
                 app:layout_constraintTop_toBottomOf="@+id/matching_option_view2"
                 android:layout_margin="8dp"
+                android:background="@color/skyblue"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                />
 
             <TextView
                 android:id="@+id/matching_option_content2"
@@ -136,6 +139,7 @@
                 android:layout_margin="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/skyblue"
                 android:layout_gravity="bottom"     />
 
             <!--            반려동물 옵션     -->
@@ -178,6 +182,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/matching_option_view3"
                 android:layout_margin="8dp"
                 android:layout_width="wrap_content"
+                android:background="@color/skyblue"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -195,6 +200,7 @@
                 app:layout_constraintStart_toEndOf="@id/matching_option_content4"
                 app:layout_constraintTop_toBottomOf="@+id/matching_option_view3"
                 android:layout_margin="8dp"
+                android:background="@color/skyblue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"     />
@@ -229,6 +235,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/matching_option_view4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/skyblue"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1" />
 
@@ -236,6 +243,7 @@
                 android:id="@+id/h_group_member_number_text"
                 app:layout_constraintTop_toBottomOf="@+id/matching_room_option"
                 android:layout_marginTop="8dp"
+
                 android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -253,6 +261,7 @@
                     android:id="@+id/h_group_member_number"
                     app:layout_constraintStart_toEndOf="@+id/matching_option_group_content1"
                     android:layout_width="100dp"
+                    android:background="@color/skyblue"
                     android:layout_height="wrap_content" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -288,6 +297,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/matching_option_view5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/skyblue"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1" />
 
@@ -311,6 +321,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="30dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@color/main_blue"

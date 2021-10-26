@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:ignore="MissingConstraints">
+    tools:ignore="MissingConstraints"
+    android:background="@color/white">
 
     <!--    상단 바    -->
 
@@ -82,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_margin="8dp"
+                android:background="@color/skyblue"
                 app:layout_constraintStart_toEndOf="@id/matching_filter_content1"
                 app:layout_constraintTop_toBottomOf="@+id/matching_filter_view1" />
 
@@ -101,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:background="@color/skyblue"
                 android:layout_margin="8dp"
                 app:layout_constraintStart_toEndOf="@id/matching_filter_content2"
                 app:layout_constraintTop_toBottomOf="@+id/matching_filter_view1" />
@@ -145,6 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@color/skyblue"
                 app:layout_constraintTop_toBottomOf="@+id/matching_filter_content3" />
 
             <TextView
@@ -163,6 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@color/skyblue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/matching_filter_content4" />
 
@@ -210,6 +215,7 @@
                 android:layout_weight="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/skyblue"
                 app:layout_constraintTop_toBottomOf="@+id/matching_filter_view3" />
 
             <!--            차량 여부       -->
@@ -244,6 +250,7 @@
                 android:layout_weight="1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/skyblue"
                 app:layout_constraintTop_toBottomOf="@+id/matching_filter_view4" />
 
 

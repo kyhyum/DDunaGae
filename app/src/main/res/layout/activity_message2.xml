@@ -14,8 +14,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:background="@color/white"
+            android:orientation="vertical">
 
 
             <LinearLayout
@@ -45,9 +45,9 @@
                     android:id="@+id/chatting_user_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
                     android:textSize="20dp" />
 
 
@@ -68,13 +68,13 @@
 
 
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black"
-                android:layout_weight="1"
                 android:layout_alignBottom="@+id/single_talkmenu"
-                />
+                android:layout_weight="1"
+                android:background="@color/black" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/single_messageActivity_recyclerview"
@@ -86,22 +86,24 @@
             <EditText
                 android:id="@+id/messageActivity_editText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:layout_toLeftOf="@+id/messageActivity_button"
-                android:background="@color/white"/>
+                android:background="@color/skyblue"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/messageActivity_button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="전송"
+                android:layout_height="48dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:background="@color/skyblue"/>
+                android:background="@color/skyblue"
+                android:text="전송" />
 
         </RelativeLayout>
+
         <include layout="@layout/single_chatting_drawer"/>
     </androidx.drawerlayout.widget.DrawerLayout>
 

@@ -53,6 +53,7 @@ public class Notice extends AppCompatActivity{
 
                 event_listview.setVisibility(View.INVISIBLE);
                 notice_listview.setVisibility(View.VISIBLE);
+
             }
         });
 
