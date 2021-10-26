@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "574818359913",
+    "firebase_url": "https://ddunagae-real-final-default-rtdb.firebaseio.com",
     "project_id": "ddunagae-real-final",
     "storage_bucket": "ddunagae-real-final.appspot.com"
   },
@@ -14,11 +15,43 @@
       },
       "oauth_client": [
         {
-          "client_id": "574818359913-22n9q0jj1jrap3b6m8pjbi1p1h0192js.apps.googleusercontent.com",
-          "client_type": 3,
+          "client_id": "574818359913-7h5jjp2ren78be7hnbd73tq5cpqltkhr.apps.googleusercontent.com",
+          "client_type": 1,
           "android_info": {
             "package_name": "com.ddunagae.ddunagae",
-            "certificate_hash": "66fced6f83f915d96eb523fe4005c58661cb2db6"
+            "certificate_hash": "44c27fc88a80564fc728ee9f280e72bb7dfe4ba0"
+          }
+        },
+        {
+          "client_id": "574818359913-at3u8pg5f7b625qbvmflmack4q668trh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddunagae.ddunagae",
+            "certificate_hash": "e6a3c970ac71d66fcb1f5781d4a0daedce4891e4"
+          }
+        },
+        {
+          "client_id": "574818359913-jmbfets91bt9cg6cv7h9qhodnvlml19p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddunagae.ddunagae",
+            "certificate_hash": "5f7afb6e78cd6815039be6d2ea192bd4b49c7954"
+          }
+        },
+        {
+          "client_id": "574818359913-ncgjkfborajls2ngd4ddto0tnub5f76r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddunagae.ddunagae",
+            "certificate_hash": "786f7956172d22a23b4ab991edca52749d5a1c23"
+          }
+        },
+        {
+          "client_id": "574818359913-tc8iusfruuo0rrrme7l9vp6a8ib33ln3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddunagae.ddunagae",
+            "certificate_hash": "fe6bdf914cca476b7f242dcd6745e066e4912965"
           }
         },
         {
