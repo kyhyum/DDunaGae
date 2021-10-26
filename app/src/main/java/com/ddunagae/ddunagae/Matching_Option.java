@@ -210,6 +210,10 @@ public class Matching_Option extends AppCompatActivity {
                 ChatModel chatModel = new ChatModel();
                 chatModel.users.put(uid, true);
 
+                if (text_room_name.length() == 0) {
+                    Toast.makeText(Matching_Option.this, "조건을 모두 채워주세요!", Toast.LENGTH_SHORT).show();
+                }
+                else{
 
                 mDatabase.child("chatting_room").child(chatting_room_option_selector).child("chatting_room_option_selector").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -242,7 +246,7 @@ public class Matching_Option extends AppCompatActivity {
                 intent_option.putExtra("Room_Name", Room_Name.getText().toString());
                 startActivity(intent_option);
 
-
+              }
             }
         });
 

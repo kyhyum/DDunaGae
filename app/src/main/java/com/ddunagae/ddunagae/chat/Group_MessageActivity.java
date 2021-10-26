@@ -94,7 +94,7 @@ public class Group_MessageActivity extends AppCompatActivity {
         groupchat_goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              onBackPressed();
+                onBackPressed();
             }
         });
 
@@ -167,12 +167,12 @@ public class Group_MessageActivity extends AppCompatActivity {
                                                         String[] user = new String[8];
                                                         @Override
                                                         public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                                                            int i=0;
                                                             for (DataSnapshot item : snapshot.getChildren()) {
-                                                                int i=0;
                                                                 user[i] = item.getKey();
                                                                 i++;
                                                             }
-                                                            if(user[1]==null){
+                                                            if(i==0){
                                                                 FirebaseDatabase.getInstance().getReference().child("chatting_room").child(option_selector).child("Room_Name").child(room_name).setValue(null);
                                                             }
                                                             else{

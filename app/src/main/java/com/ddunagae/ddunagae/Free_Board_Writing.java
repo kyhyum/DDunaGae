@@ -3,6 +3,7 @@ package com.ddunagae.ddunagae;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
@@ -122,6 +123,8 @@ public class Free_Board_Writing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+               okay.setEnabled(false);
+
                 category = free_board_category_spinner.getSelectedItem().toString();
                 if (category.equals("리뷰")) {
                     category_review = review_category_spinner.getSelectedItem().toString();
@@ -129,10 +132,19 @@ public class Free_Board_Writing extends AppCompatActivity {
 
                 if (imageUri != null) {
 
+                    Toast.makeText(getApplicationContext(),"글 업로드 중입니다!",Toast.LENGTH_SHORT).show();
+                    Handler mHandler = new Handler();
+                    mHandler.postDelayed(new Runnable() { public void run() {
+                    } }, 3000);
+
+
                     FirebaseStorage.getInstance().getReference().child("Freeboard_Images").child(uid).putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                             @SuppressWarnings("VisibleForTests")
+
+
+
                             Task<Uri> imageUrl = task.getResult().getStorage().getDownloadUrl();
                             while (!imageUrl.isComplete()) ;
 
@@ -148,6 +160,8 @@ public class Free_Board_Writing extends AppCompatActivity {
                                     sdf.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
 
                                     Article_Database(uid, nickname, title.getText().toString(), content.getText().toString(), imageUrl.getResult().toString(), sdf.format(timestamp), category, category_review);
+
+
 
                                 }
 
@@ -171,6 +185,12 @@ public class Free_Board_Writing extends AppCompatActivity {
                             sdf.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
 
                             Article_No_Photo_Database(uid, nickname, title.getText().toString(), content.getText().toString(), sdf.format(timestamp), category, category_review);
+
+                            Toast.makeText(getApplicationContext(),"글 업로드 중입니다!",Toast.LENGTH_SHORT).show();
+
+                            Handler mHandler = new Handler();
+                            mHandler.postDelayed(new Runnable() { public void run() {
+                            } }, 1000);
 
                         }
 

@@ -120,7 +120,27 @@ public class My_Group_ChatFragment extends Fragment {
             final CustomViewHolder customViewHolder = (CustomViewHolder)holder;
             customViewHolder.group_textView_room.setText(RoomModels.get(position).Room_name);
 
+
             Intent intent = new Intent(getActivity(), Group_MessageActivity.class);
+
+            FirebaseDatabase.getInstance().getReference().child("chatting_room").child(RoomModels.get(position).Room_selector_option).child("Room_Name").child(RoomModels.get(position).Room_name).child("talk").orderByChild("users/"+uid).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot item : snapshot.getChildren()) {
+                        ChatModel chatModel = item.getValue(ChatModel.class);
+
+                        String abc = String.valueOf(chatModel.users.size())+ "명";
+                        customViewHolder.group_chatitem_textview_member_num.setText( abc);
+                    }
+
+                }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                    }
+                });
+
 
             FirebaseDatabase.getInstance().getReference().child("chatting_room").child(RoomModels.get(position).Room_selector_option).child("Room_Name").child(RoomModels.get(position).Room_name).child("master_uid").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -155,6 +175,8 @@ public class My_Group_ChatFragment extends Fragment {
 
 
 
+
+
             if(chatModels.get(position).comments == null) {
                 customViewHolder.group_textView_last_message.setText("채팅 내역이 없습니다");
             }
@@ -164,6 +186,7 @@ public class My_Group_ChatFragment extends Fragment {
                 String lastMessageKey = (String) commentMap.keySet().toArray()[0];
                 customViewHolder.group_textView_last_message.setText(chatModels.get(position).comments.get(lastMessageKey).message);
             }
+
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -182,6 +205,10 @@ public class My_Group_ChatFragment extends Fragment {
             });
 
 
+
+
+
+
         }
 
         @Override
@@ -192,14 +219,12 @@ public class My_Group_ChatFragment extends Fragment {
         private class CustomViewHolder extends RecyclerView.ViewHolder {
 
             public TextView group_chatitem_textview_member_num;
-            public TextView group_chatitem_textview_member;
             public ImageView group_chatitem_imageview;
             public TextView group_textView_room;
             public TextView group_textView_last_message;
             public CustomViewHolder(View view) {
                 super(view);
                 group_chatitem_textview_member_num = (TextView)view.findViewById(R.id.group_chatitem_textview_member_num);
-                group_chatitem_textview_member = (TextView)view.findViewById(R.id.group_chatitem_textview_member);
                 group_chatitem_imageview = (ImageView) view.findViewById(R.id.group_chatitem_imageview);
                 group_textView_room = (TextView)view.findViewById(R.id.group_chatitem_textview_title);
                 group_textView_last_message = (TextView)view.findViewById(R.id.group_chatitem_textview_lastMessage);

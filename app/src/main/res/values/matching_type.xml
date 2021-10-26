@@ -35,17 +35,14 @@
     </string-array>
 
     <string-array name="h_car_option">
+        <item>차 여부</item>
         <item>예</item>
         <item>아니오</item>
     </string-array>
 
-    <string-array name="live_area_1">
-        <item>예</item>
-        <item>아니오</item>
-    </string-array>
 
     <string-array name="group_member_number">
-        <item>2명</item>
+
         <item>3명</item>
         <item>4명</item>
         <item>5명</item>

@@ -3,6 +3,7 @@ package com.ddunagae.ddunagae;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -90,6 +91,14 @@ public class Service_Center_Writing extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                okay.setEnabled(false);
+
+                Toast.makeText(getApplicationContext(),"글 작성! 잠시만 기다려주세요.",Toast.LENGTH_SHORT).show();
+
+                Handler mHandler = new Handler();
+                mHandler.postDelayed(new Runnable() { public void run() {
+                } }, 2000);
 
                 category = service_spinner.getSelectedItem().toString();
 

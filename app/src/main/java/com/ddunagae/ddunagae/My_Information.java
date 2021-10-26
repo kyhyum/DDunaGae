@@ -3,6 +3,7 @@ package com.ddunagae.ddunagae;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
@@ -113,6 +114,9 @@ public class My_Information extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v ) {
+
+                button.setEnabled(false);
+
                 String text_pet_type = pet_type_spinner.getSelectedItem().toString();
                 String text_car_spinner = car_spinner.getSelectedItem().toString();
                 String text_my_sex_spinner = my_sex_spinner.getSelectedItem().toString();
@@ -130,6 +134,13 @@ public class My_Information extends AppCompatActivity {
                             roomModel.profileImageUrl = imageUrl.getResult().toString();
                             roomModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                             member_database(uid, nick_name.getText().toString(),text_my_sex_spinner, my_name.getText().toString(), phone_num1.getText().toString(), myage1.getText().toString(),roomModel.profileImageUrl,text_pet_type, petage1.getText().toString(), petweight1.getText().toString(), petname1.getText().toString(), text_car_spinner, unique1.getText().toString());
+
+                            Toast.makeText(getApplicationContext(),"회원 가입 중! 잠시만 기다려주세요.",Toast.LENGTH_SHORT).show();
+
+                            Handler mHandler = new Handler();
+                            mHandler.postDelayed(new Runnable() { public void run() {
+                            } }, 2000);
+
                         }
                     });
                 }
